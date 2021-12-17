@@ -1,0 +1,32 @@
+note over selain:
+Käyttäjä lataa sivun.
+HTML-koodi haetaan ensimmäisenä.
+end note
+
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+palvelin-->selain: HTML-koodi
+
+note over selain:
+Tämän jälkeen haetaan tyylitiedosto (main.css).
+end note
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+palvelin-->selain: main.css
+
+note over selain
+Tyylitiedoston jälkeen javascript-skriptin vuoro.
+end note
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+palvelin-->selain: spa.js
+
+note over selain
+Sitten vuorossa on data (data.json).
+end note
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+palvelin-->selain: data.json
+
+note over selain
+Lopuksi vuorossa on favicon.ico:n hankkiminen.
+(Mikä ei kyllä palauta logoa)
+end note
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/favicon.ico
+palvelin-->selain: favicon.ico

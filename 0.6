@@ -1,0 +1,15 @@
+note over selain:
+Oletetaan että käyttäjä on
+ladannut sivun ja valmiiksi
+ja kirjoittanut viestinsä
+viestilaatikkoon.
+end note
+
+selain->palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+selain-->palvelin: Käyttäjän määrittämä viesti ja timestamp.
+
+note over palvelin:
+Palvelin on vastaanottanut uuden
+merkinnän ja lisännyt sen selaimen
+HTML-tiedostoon.
+end note

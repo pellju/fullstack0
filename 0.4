@@ -1,0 +1,33 @@
+note over selain:
+Oletetaan että selain on ladannut sivun 
+ja kaiken datan tässä vaiheessa ja
+käyttäjä on kirjoittanut tekstikenttään
+haluamansa tekstin.
+end note
+
+note over selain:
+Käyttäjä painaa "Save"-nappia.
+end note
+
+selain->palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+
+note over palvelin:
+Palvelin on vastaanottanut käyttäjän lähettämän
+tekstin ja lisännyt sen listaan.
+Palvelin palauttaa sivun ja datan
+end note
+
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+palvelin-->selain: HTML-koodi
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+palvelin-->selain: main.css
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+palvelin-->selain: main.js
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+palvelin-->selain: data.json
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/favicon.ico
+palvelin-->selain: favicon.ico (ohjaa sivulle)
+note over selain:
+Palvelin on palauttanut selaimelle sivun
+ja datan JSON-muodossa.
+end note
